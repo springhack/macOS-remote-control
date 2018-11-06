@@ -5,6 +5,7 @@ import SimpleHTTPServer
 import SocketServer
 import mimetypes
 import Quartz
+import AppKit
 import shutil
 import json
 import sys
@@ -93,4 +94,6 @@ def StartServer(port):
     httpd.server_close()
 
 if __name__ == '__main__':
-    StartServer(8000)
+  info = AppKit.NSBundle.mainBundle().infoDictionary()
+  info["LSBackgroundOnly"] = "1"
+  StartServer(8000)
