@@ -315,4 +315,4 @@ if __name__ == '__main__':
   if 'PORT' in os.environ:
     StartServer(int(os.environ['PORT']))
   else:
-    StartServer(8000)
+    StartServer(80)
